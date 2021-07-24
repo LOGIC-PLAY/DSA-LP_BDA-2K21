@@ -21,32 +21,30 @@ class Solution
 
 int main()
 {
-int t;
-cin>>t;
-while(t--)
-{
-int n, num;
-cin>>n;
-
-Node *head, *tail;
-cin>>num;
-head=tail=new Node(num);
-
-for(int i=0;i<n-1;i++)
-{
-cin>>num;
-tail->next=new Node(num);
-tail=tail->next;
-]
-
-int pos;
-cin>>pos;
-loopHere(head,tail,pos);
-Solution ob;
-if(ob.detectLoop(head))
-cout<<"True\n";
-else
-cout<<"False\n";
-}
-return 0;
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n, num;
+        cin>>n;
+        Node *head, *tail;
+        cin>>num;
+        head=tail=new Node(num);
+        for(int i=0;i<n-1;i++)
+        {
+            cin>>num;
+            tail->next=new Node(num);
+            tail=tail->next;
+        }
+        int pos;
+        cin>>pos;
+        loopHere(head,tail,pos);
+        
+        Solution ob;
+        if(ob.detectLoop(head))
+            cout<<"True\n";
+        else
+            cout<<"False\n";
+    }
+    return 0;
 }
